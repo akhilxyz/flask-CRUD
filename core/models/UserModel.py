@@ -2,13 +2,14 @@
 from flask_bcrypt import generate_password_hash, check_password_hash
 
 # Import from application modules
-from models.db import db
+from core.db.database import db
 
 
 # Object Document Model (ODM) for User Objects
 class User(db.Document):
     username = db.EmailField(required=True, unique=True)
     password = db.StringField(required=True)
+    # wallet = db.StringField(required=True)
     roles = db.ListField(db.StringField(), default=['default'])
 
     # function to hash a password for security encryption

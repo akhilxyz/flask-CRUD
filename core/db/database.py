@@ -5,7 +5,7 @@ from flask_mongoengine import MongoEngine
 
 db_config = [
     {
-        "db": "project1",
+        "db": "collective_vault",
         "host": "10.1.5.156",
         "port": 27017,
         "alias": "default",
@@ -13,7 +13,6 @@ db_config = [
 ]
 
 # MongoEngine load to db variable
-
 db = MongoEngine()
 
 # Function to initialize db to app

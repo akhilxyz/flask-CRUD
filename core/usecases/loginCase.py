@@ -1,4 +1,4 @@
-from cmath import log
+# from cmath import log
 import datetime
 
 # Import from system libraries
@@ -9,7 +9,7 @@ from mongoengine import DoesNotExist
 
 # Import from application modules
 from errors import UnauthorizedError, InternalServerError
-from models.User import User
+from core.models.UserModel import User
 
 
 # Class Login API to load in Routes
@@ -19,7 +19,6 @@ class LoginApi(Resource):
         try:
             # get body (json) from client request
             body = request.get_json()
-
             # get user object from database with condition username from request
             user = User.objects.get(username=body.get('username'))
             # check password (encryption)

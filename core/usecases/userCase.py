@@ -5,7 +5,7 @@ from flask_restful import Resource
 from mongoengine import FieldDoesNotExist, NotUniqueError, DoesNotExist, InvalidQueryError
 from errors import NoAuthorizationError, InternalServerError, SchemaValidationError, EmailAlreadyExistsError, \
     DeletingUserError, UpdatingUserError
-from models.User import User
+from core.models.UserModel import User
 
 
 class User2Api(Resource):
